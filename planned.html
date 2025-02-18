@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Планируемые платежи</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container cyberpunk-3d">
+    <h2>⏰ Планируемые платежи</h2>
+
+    <input type="text" id="planned-name" placeholder="Название платежа" />
+    <input type="number" id="planned-amount" placeholder="Сумма" />
+    <input type="date" id="planned-date" />
+    <select id="planned-type">
+      <option value="subscription">Подписка</option>
+      <option value="utility">ЖКХ</option>
+      <option value="other">Другое</option>
+    </select>
+    <input type="checkbox" id="planned-recurring" />
+    <label for="planned-recurring">Ежемесячный платёж</label>
+
+    <button class="add-button neon-border" onclick="addPlannedPayment()">
+      Добавить платёж
+    </button>
+    <button class="add-button neon-border" onclick="location.href='index.html'">
+      🔙 Назад
+    </button>
+
+    <h3>Ожидаемые платежи:</h3>
+    <ul id="planned-list"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

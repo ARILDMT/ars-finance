@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Мои Долги</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container cyberpunk-3d">
+    <h2>📌 Долги</h2>
+
+    <input type="text" id="debt-name" placeholder="Название долга" />
+    <input type="number" id="debt-amount" placeholder="Сумма долга" />
+    <input type="date" id="debt-due" placeholder="Дата возврата" />
+
+    <button class="add-button neon-border" onclick="addDebt()">
+      Добавить Долг
+    </button>
+    <button class="add-button neon-border" onclick="location.href='index.html'">
+      🔙 Назад
+    </button>
+
+    <h3>Список долгов:</h3>
+    <ul id="debt-list"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

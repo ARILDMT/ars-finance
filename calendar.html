@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Календарь Смен</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container cyberpunk-3d">
+    <h2>📅 Календарь Смен</h2>
+
+    <input type="date" id="shift-date" />
+    <input type="number" id="hours" placeholder="Часы" />
+    <input type="number" id="hourly-rate" placeholder="Почасовая ставка" />
+
+    <button class="add-button neon-border" onclick="addShift()">
+      Добавить Смену
+    </button>
+    <button class="add-button neon-border" onclick="location.href='index.html'">
+      🔙 Назад
+    </button>
+
+    <h3>Мои смены:</h3>
+    <ul id="shift-list"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

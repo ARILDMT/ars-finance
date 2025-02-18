@@ -1,31 +1,129 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width"> <initial-scale=1.0">
-  <title>Финансы</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Киберпанк Финансы</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <!-- Подключаем Chart.js для графиков -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body>
+
   <div class="container">
-    <h1>Мой бюджет</h1>
-    <h2 id="balance">Баланс 0</h2>
+    <div class="header">
+      <h1>Overview</h1>
+      <div class="header-actions">
+        <button class="menu-button">—</button>
+      </div>
+    </div>
+    
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>My Balance</h3>
+        <div class="amount" id="balance">$0.00</div>
+        <div class="trend">+11.4%</div>
+      </div>
+      <div class="stat-card">
+        <h3>Income</h3>
+        <div class="amount" id="total-income">$0.00</div>
+        <div class="trend">+8.2%</div>
+      </div>
+      <div class="stat-card">
+        <h3>Savings</h3>
+        <div class="amount" id="total-savings">$0.00</div>
+        <div class="trend">+9.5%</div>
+      </div>
+      <div class="stat-card">
+        <h3>Expense</h3>
+        <div class="amount" id="total-expense">$0.00</div>
+        <div class="trend">-2.4%</div>
+      </div>
+    </div>
 
-    <input type="number" id="amount" placeholder="Сумма">
-    <select id="type">
-      <option value="income">Доход</option>
-      <option value="expense">Расход</option>
-    </select>
-    <button onclick=addTransaction()>Добавить</button>
+    <div class="chart-container">
+      <div class="chart-header">
+        <h3>Money Flow</h3>
+        <select>
+          <option>6 Month</option>
+          <option>1 Year</option>
+        </select>
+      </div>
+      <canvas id="lineChart"></canvas>
+    </div>
 
-    <h3>История</h3>
-    <ul id="history""></ul>
-  </div>  
-  <script src=" script.js">
-  </script>
+    <div class="chart-container">
+      <div class="chart-header">
+        <h3>Income vs Expenses</h3>
+        <select>
+          <option>This Month</option>
+          <option>Last Month</option>
+        </select>
+      </div>
+      <canvas id="barChart"></canvas>
+    </div>
+    
+    <div class="savings-section">
+      <div class="chart-header">
+        <h3>My Savings</h3>
+        <a href="#" class="view-all">View all</a>
+      </div>
+      <div class="savings-list">
+        <div class="savings-item">
+          <span>Gaming PC</span>
+          <div class="savings-progress">
+            <div class="progress-bar" style="width: 75%"></div>
+          </div>
+          <span>$309</span>
+        </div>
+        <div class="savings-item">
+          <span>New house</span>
+          <div class="savings-progress">
+            <div class="progress-bar" style="width: 45%"></div>
+          </div>
+          <span>$950</span>
+        </div>
+      </div>
+    </div>
 
+    <!-- Краткая сводка -->
+    <div class="summary-container neon-border glass-effect">
+      <div class="summary-item">
+        <h3>💳 Кредиты</h3>
+        <p id="credits-total">$0.00</p>
+      </div>
+      <div class="summary-item">
+        <h3>📌 Долги</h3>
+        <p id="debts-total">$0.00</p>
+      </div>
+      <div class="summary-item">
+        <h3>⏰ Ожидаемые платежи</h3>
+        <p id="planned-total">$0.00</p>
+      </div>
+    </div>
+
+    <!-- Кнопки -->
+    <div class="buttons-group">
+      <button class="add-button neon-border" onclick="location.href='transaction.html'">
+        + Добавить Транзакцию
+      </button>
+      <button class="add-button neon-border" onclick="location.href='planned.html'">
+        + Планируемые платежи
+      </button>
+    </div>
+
+    <!-- Меню (иконка и выпадающий список) -->
+    <div class="menu" id="menu">
+      <button class="menu-button" onclick="toggleMenu()">🚀</button>
+      <ul id="menu-list">
+        <li><a href="calendar.html">📅 Календарь</a></li>
+        <li><a href="debts.html">📌 Долги</a></li>
+        <li><a href="credits.html">💳 Кредиты</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
