@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width"> <initial-scale=1.0">
+  <title>Финансы</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Мой бюджет</h1>
+    <h2 id="balance">Баланс 0</h2>
+
+    <input type="number" id="amount" placeholder="Сумма">
+    <select id="type">
+      <option value="income">Доход</option>
+      <option value="expense">Расход</option>
+    </select>
+    <button onclick=addTransaction()>Добавить</button>
+
+    <h3>История</h3>
+    <ul id="history""></ul>
+  </div>  
+  <script src=" script.js">
+  </script>
+
+</body>
+
+</html>
